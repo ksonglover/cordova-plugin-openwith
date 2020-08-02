@@ -115,7 +115,7 @@ function setupOpenwith() {
 
   function myHandler(intent) {
     console.log('intent received');
-
+    console.log('extras:' + intent.extras);
     console.log('  action: ' + intent.action); // type of action requested by the user
     console.log('  exit: ' + intent.exit); // if true, you should exit the app after processing
 
