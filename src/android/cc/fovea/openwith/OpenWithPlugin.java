@@ -210,6 +210,14 @@ public class OpenWithPlugin extends CordovaPlugin {
     public void onNewIntent(final Intent intent) {
         log(DEBUG, "onNewIntent() " + intent.getAction());
         final JSONObject json = toJSONObject(intent);
+        final JSONObject json = toJSONObject(intent);
+         //like youtube share button store to extras.
+        try{
+            Bundle extras = intent.getExtras();
+            json.put("extras", extras.getString(Intent.EXTRA_TEXT));
+        }catch(Exception e){
+            log(ERROR, "getExtras():" + e.getMessage());
+        }
         if (json != null) {
             pendingIntents.add(json);
         }
