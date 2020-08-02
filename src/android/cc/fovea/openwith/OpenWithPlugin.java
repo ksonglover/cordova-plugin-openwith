@@ -3,6 +3,7 @@ package cc.fovea.openwith;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -209,7 +210,6 @@ public class OpenWithPlugin extends CordovaPlugin {
     @Override
     public void onNewIntent(final Intent intent) {
         log(DEBUG, "onNewIntent() " + intent.getAction());
-        final JSONObject json = toJSONObject(intent);
         final JSONObject json = toJSONObject(intent);
          //like youtube share button store to extras.
         try{
